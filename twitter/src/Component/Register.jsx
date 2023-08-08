@@ -44,128 +44,129 @@
 // export default Register
 
 
-// import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-// const Register = () => {
-//   const [userData, setUserData] = useState({name: "", email: "", password: "" , role: "Buyer"})
-//   const router= useNavigate();
-//   console.log(userData,'userData')
+const Register = () => {
+  const [userData, setUserData] = useState({name: "", email: "", password: "" , role: "Buyer"})
+  const router= useNavigate();
+  console.log(userData,'userData')
 
-//    const handleChange = (event) =>{
-//     setUserData({...userData, [event.target.name]: event.target.value});
-//    }
-//     const handleSubmit = (event)=>{
-//       event.preventDefault();
-//       if(userData.name && userData.email && userData.password){
-//         const  usersArray = JSON.parse(localStorage.getItem("Users")) || [];
-//         usersArray.push (userData)
-//         localStorage.setItem("Users",JSON.stringify( usersArray))
-//         setUserData  ({name: "", email: "", password: "", role: "Buyer",cart: []})
-//         router("/login")
-//         alert("registrataion success")
+   const handleChange = (event) =>{
+    setUserData({...userData, [event.target.name]: event.target.value});
+   }
+    const handleSubmit = (event)=>{
+      event.preventDefault();
+      if(userData.name && userData.email && userData.password){
+        const  usersArray = JSON.parse(localStorage.getItem("Users")) || [];
+        usersArray.push (userData)
+        localStorage.setItem("Users",JSON.stringify( usersArray))
+        setUserData  ({name: "", email: "", password: "", role: "Buyer",cart: []})
+        router("/login")
+        alert("registrataion success")
 
-//       } else{
-//         alert("please fill all field")
-//       }
-//     }
-//     function selectRole (event){
-//     setUserData ({...userData,["role"]: event.target.value})
-//     }
+      } else{
+        alert("please fill all field")
+      }
+    }
+    function selectRole (event){
+    setUserData ({...userData,["role"]: event.target.value})
+    }
 
-//   return (
-//     <div>
-//       <h2>Register</h2>
-//       <form onSubmit={handleSubmit}>
-//         <label>Enter your Name*</label><br/>
-//         <input  value={userData.name} type='text'  onChange={handleChange} name='name'/><br/>
-//         <label>Select:Role</label><br/>
-//         <select onClick={selectRole}>
-//           <option value= 'Seller' >Seller</option>
-//           <option value= 'Buyer'>Buyer</option>
+  return (
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
+        <label>Enter your Name*</label><br/>
+        <input  value={userData.name} type='text'  onChange={handleChange} name='name'/><br/>
+        <label>Select:Role</label><br/>
+        <select onClick={selectRole}>
+          <option value= 'Seller' >Seller</option>
+          <option value= 'Buyer'>Buyer</option>
 
           
-//           </select><br/>
+          </select><br/>
 
-//         <label>Enter Your Email*</label><br/>
-//         <input  value={userData.email} type='email'  onChange={handleChange} name='email'/><br/>
-//         <label>Enter Your Password*</label><br/>
-//         <input  value={userData.password} type='password'  onChange={handleChange} name='password'/><br/>
-//         <input type='submit' value='Register'/><br/>
+        <label>Enter Your Email*</label><br/>
+        <input  value={userData.email} type='email'  onChange={handleChange} name='email'/><br/>
+        <label>Enter Your Password*</label><br/>
+        <input  value={userData.password} type='password'  onChange={handleChange} name='password'/><br/>
+        <input type='submit' value='Register'/><br/>
 
-//       </form>
-//     </div>
-//   )
-// }
+      </form>
+    </div>
+  )
+}
 
-// export default Register
+export default Register
 
 
   //  **************************self practice************************
 
-   import React, { useState } from 'react'
-   import { useNavigate } from 'react-router-dom'
+  //  import React, { useState } from 'react'
+  //  import { useNavigate } from 'react-router-dom'
    
-   const Register = () => {
-    const [userData,setUserData] = useState ({name: "",email: "",password: "",role: "Buyer" })
-    const router = useNavigate();
+  //  const Register = () => {
+  //   const [userData,setUserData] = useState ({name: "",email: "",password: "",role: "Buyer" })
+  //   const router = useNavigate();
 
-    const  handleChange = (event) =>{
-      setUserData({...userData,[event.target.name]: event.target.value})
-    }
-    const handleSubmit =(event) =>{
-      event.preventDefault();
-      if(userData.name && userData.email && userData.password){
-        const userArray  = JSON.parse(localStorage.getItem("Users")) || []
-         const userDataObj = {
-          name:userData.name,
-          email:userData.email,
-          password:userData.password,
-          role:userData.role,
-          cart:[]
-         };
+  //   const  handleChange = (event) =>{
+  //     setUserData({...userData,[event.target.name]: event.target.value})
+  //   }
+  //   const handleSubmit =(event) =>{
+  //     event.preventDefault();
+  //     if(userData.name && userData.email && userData.password){
+  //       const usersArray  = JSON.parse(localStorage.getItem("Users")) || []
+        
+  //        const userDataObj = {
+  //         name:userData.name,
+  //         email:userData.email,
+  //         password:userData.password,
+  //         role:userData.role,
+  //         cart:[]
+  //        };
        
-       userArray.push(userDataObj)
-       localStorage.setItem("Users",JSON.stringify)(userArray);
-       setUserData({ name: "", email: "", password: "", role: "Buyer" ,cart: []});
-       router("/login")
-               alert("registrataion success")
+  //      usersArray.push(userDataObj)
+  //      localStorage.setItem("Users",JSON.stringify)(usersArray);
+  //      setUserData({ name: "", email: "", password: "", role: "Buyer" ,cart: []});
+  //      router("/login")
+  //              alert("registrataion success")
       
-      }else{
-       alert ("please fill all field")
-      }
+  //     }else{
+  //      alert ("please fill all field")
+  //     }
     
-    }
-    function SelectRole (event){
-      setUserData({...userData,["role"]: event.target.value})
-    }
-
-    
+  //   }
+  //   function SelectRole (event){
+  //     setUserData({...userData,["role"]: event.target.value})
+  //   }
 
     
 
-     return (
-       <div>
-        <h2>Registerd Here</h2>
-        <form onSubmit={handleSubmit}>
-           <label>Enter Your Name*</label><br/>
-           <input value={userData.name} type='text' onChange={handleChange} name='name'/><br/>
-           <label > Select:Role</label><br/>
-           <select onChange={SelectRole}>
-           <option  value='Seller'>Seller</option>
-           <option value='Buyer'> Buyer</option>
-           </select><br/>
+    
 
-           <label>Enter Your Email*</label><br/>
-           <input value={userData.email} type='email' onChange={handleChange} name='email'/><br/>
-           <label>Enter Your Password*</label><br/>
-           <input value={userData.password} type='password' onChange={handleChange} name='password'/><br/>
+  //    return (
+  //      <div>
+  //       <h2>Registerd Here</h2>
+  //       <form onSubmit={handleSubmit}>
+  //          <label>Enter Your Name*</label><br/>
+  //          <input value={userData.name} type='text' onChange={handleChange} name='name'/><br/>
+  //          <label > Select:Role</label><br/>
+  //          <select onChange={SelectRole}>
+  //          <option  value='Seller'>Seller</option>
+  //          <option value='Buyer'> Buyer</option>
+  //          </select><br/>
+
+  //          <label>Enter Your Email*</label><br/>
+  //          <input value={userData.email} type='email' onChange={handleChange} name='email'/><br/>
+  //          <label>Enter Your Password*</label><br/>
+  //          <input value={userData.password} type='password' onChange={handleChange} name='password'/><br/>
           
-           <input type='submit'value= 'Register'/><br/>
-        </form>
+  //          <input type='submit'value= 'Register'/><br/>
+  //       </form>
 
-       </div>
-     )
-   }
+  //      </div>
+  //    )
+  //  }
    
-   export default Register
+  //  export default Register
