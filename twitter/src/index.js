@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
   <React.StrictMode>
-    <AuthProvider>
+    {/* <AuthProvider> */}
       {/* <Toaster
         position="top-center"
         reverseOrder={false}
@@ -41,7 +41,7 @@ root.render(
     <BrowserRouter>
     <App />
     </BrowserRouter>
-    </AuthProvider>
+    {/* </AuthProvider> */}
   </React.StrictMode>
 );
 
