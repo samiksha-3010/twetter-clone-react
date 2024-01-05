@@ -14,7 +14,6 @@
 //       setUser({})
 //     }
 //   },[state])
- 
 
 //   return (
 //     <div  style={{width: "100%", height: "80px", border: "1px solid black", backgroundColor:"black", color:"white", display:"flex",justifyContent: "space-around"}}>
@@ -43,19 +42,16 @@
 
 
 
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+// import React from 'react'
+// import { useNavigate } from 'react-router-dom'
 
-const Navbar = () => {
-    const router = useNavigate()
-  return (
-    <div  onClick={()=>router ("/")} style={{width: "100%", height: "70px", border: "1px solid black", backgroundColor: "black", color: "white", display: "flex", justifyContent: "space-around"}}>
+// const Navbar = () => {
+//     const router = useNavigate()
+//   return (
+//     <div  onClick={()=>router ("/")} style={{width: "100%", height: "70px", border: "1px solid black", backgroundColor: "black", color: "white", display: "flex", justifyContent: "space-around"}}>
         
-        Navbar</div>
-       
+//         Navbar</div>    
+//   )
+// }
 
-       
-  )
-}
-
-export default Navbar
+// export default Navbar

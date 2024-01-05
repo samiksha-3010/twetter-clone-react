@@ -8,24 +8,21 @@ import Register from './Component/Register';
 import Login from './Component/Login';
 import AddProduct from './Component/AddProduct';
 import AllProduct from './Component/Context/AllProduct';
-
-
+import NavbarTwo from './SecondAwdiz/NavbarTwo';
 
 function App() {
   return (
     <div className="App">
-       <Navbar/>
+       {/* <Navbar/> */}
        <Routes>
-         <Route exact path ='/'element={<Home/>}/> 
+         {/* <Route exact path ='/'element={<Home/>}/> 
          <Route exact path ='/register'element={<Register/>}/>
          <Route exact path='login'element={<Login/>}/>
          <Route exact path= 'add-product'element={<AddProduct/>}/>
-         <Route exact path= 'all-product'element={<AllProduct/>}/> 
-     
-
-
+         <Route exact path= 'all-product'element={<AllProduct/>}/>  */}
+         <Route exact path= 'Navbar-Two'element={<NavbarTwo/>}/> 
        </Routes>
-       <Footer/>
+       {/* <Footer/> */}
     </div>
   );
 }
